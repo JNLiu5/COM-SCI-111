@@ -1,0 +1,38 @@
+Name: Justin Liu
+UCLA ID: 504487373
+
+
+-------------------------------------------------------------------------------
+
+Response to Exercise 1:
+In most cases, yes. Different processes do not share registers, so what happens after schedule() should not affect the current process's registers. However, registers are not protected from other processes and it is possible for another process to tamper with the current process's registers.
+
+Exercise 3:
+INT_SYS_EXIT sets the current process's (CP) state to P_BLOCKED and saves the process ID CP is waiting on in a field, p_wait. When a process exits it checks each process's p_wait to see if anything is waiting on it, and if so transfers its exit status to that process's %eax.
+
+Anything else you'd like us to know:
+This lab was actually pretty okay.
+
+
+Extra credit exercises:
+5.
+void start(void) {
+     int x = 0;
+     volatile int *ptr = &x;
+     pid_t p = sys_fork();
+     if(p == 0) {
+     	  x++;
+     	  *ptr = 1;
+     }
+     else if(p > 0) {
+     	  sys_wait(p);
+     }
+     app_printf("%d", x))
+     sys_exit(0);
+}
+
+6 - in code
+Vaguely, I defined INT_SYS_THREAD in mpos.h, sys_newthread in mpos-app.h, and wrote a case for INT_SYS_THREAD in the switch statement in mpos-kern.c, then defined do_thread to handle that case.
+
+7 - in code, partially complete
+Like in 6, i defined iNT_SYS_KILL in mpos.h, and sys_kill in mpos-app.h, and wrote a case for INT_SYS_KILL in mpos-kern.c, that is essentially a copy of INT_SYS_EXIT but with more killing and less waiting
