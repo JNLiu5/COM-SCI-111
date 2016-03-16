@@ -1,0 +1,52 @@
+Name: Justin Liu
+UCLA ID: 504487373
+
+Collaborators:
+
+-------------------------------------------------------------------------------
+
+Response to Exercise 1:
+
+The name of the scheduling algorithm is:
+round robin without pre-emption
+
+
+(Exercise 2 is a coding exercise)
+
+
+Response to Exercise 3:
+
+Average turnaround time for scheduling_algorithm 0: 
+(1277 + 1278 + 1279 + 1280)/4 = 1278.5 ms
+
+Average turnaround time for scheduling_algorithm 1:
+(320 + 640 + 960 + 1280)/4 = 800 ms
+
+Average wait time for scheduling_algorithm 0:
+(0 + 1 + 2 + 3)/4 = 1.5 ms
+
+Average wait time for scheduling_algorithm 1:
+(0 + 320 + 640 + 960)/4 = 480 ms
+
+
+Exercise 4:
+
+Did you complete Exercise 4A, Exercise 4B, or both for extra credit?
+both
+
+Exercise 5:
+The first interrupt is during process 4 since the process is stopped before it prints '4', resulting in "...1234 123 1234..."
+
+(Exercise 6 is a coding exercise)
+
+
+Anything else you'd like us to know:
+This lab was pretty okay
+
+
+Extra credit exercises:
+Exercise 7:
+Implemented a lottery scheduling system by giving processes a p_tickets variable and assigning each one an arbitrary number of tickets, then using a Fibonacci LFSR to pick a random ticket and run the corresponding process.
+
+Exercise 8:
+Implemented a system call to print characters (sys_print). Exercise 6 used athe atomic_swap function defined in x86sync.h.
